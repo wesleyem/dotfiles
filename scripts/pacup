@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# pacup
+# simple wrapper for updating arch system
+#
+
+abort()
+{
+  echo "aborting..."
+}
+
+run()
+{
+  sudo pacman -Syu
+}
+
+if [ "$#" == 0 ]; then
+  run
+else
+  echo "Thanks, but not accepting arguments atm."
+  abort
+fi
