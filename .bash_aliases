@@ -16,4 +16,6 @@ alias dotp='dot push'
 # git
 alias ga='git add'
 alias gc='git commit -m'
+alias gca='git commit -am'
 alias gs='git status'
+alias gp='git push'

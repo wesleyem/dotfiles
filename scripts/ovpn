@@ -1,38 +1,42 @@
 #!/bin/bash
+#
+# Create unit file in /etc/systemd/system/ovpn.service
+# systemctl enable ovpn.service
+#
 
 NUMBER=$(( ( RANDOM % 5 )  + 1 ))
 
 DIR="/etc/openvpn/client/"
-IL="US_Chicago.conf"
 NY="US_New_York_City.conf"
-FL="US_Florida.conf"
 GA="US_Atlanta.conf"
+IL="US_Chicago.conf"
+FL="US_Florida.conf"
 E="US_East.conf"
 
 
-# need to do a little cleanup first
-sudo killall openvpn
-sudo bash $HOME/builds/vpnfailsafe-git/src/vpnfailsafe/extras/vpnfailsafe_reset.sh
+# close openvpn connection
+killall openvpn
+# reset hosts file and iptables to allow new connection to be established
+bash /etc/openvpn/vpnfailsafe_reset.sh
 
+# random connection
 case $NUMBER in
     1)
-    sudo openvpn $DIR$NY &
+    openvpn $DIR$NY
     ;;
     2)
-    sudo openvpn $DIR$GA &
+    openvpn $DIR$GA
     ;;
     3)
-    sudo openvpn $DIR$E &
+    openvpn $DIR$E
     ;;
     4)
-    sudo openvpn $DIR$IL &
+    openvpn $DIR$IL
     ;;
     5)
-    sudo openvpn $DIR$FL &
+    openvpn $DIR$FL
     ;;
     *)
-    sudo openvpn $DIR$FL &
+    openvpn $DIR$FL
     ;;
 esac
-
-sleep 5 && ipif
