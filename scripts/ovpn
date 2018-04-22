@@ -1,0 +1,38 @@
+#!/bin/bash
+
+NUMBER=$(( ( RANDOM % 5 )  + 1 ))
+
+DIR="/etc/openvpn/client/"
+IL="US_Chicago.conf"
+NY="US_New_York_City.conf"
+FL="US_Florida.conf"
+GA="US_Atlanta.conf"
+E="US_East.conf"
+
+
+# need to do a little cleanup first
+sudo killall openvpn
+sudo bash $HOME/builds/vpnfailsafe-git/src/vpnfailsafe/extras/vpnfailsafe_reset.sh
+
+case $NUMBER in
+    1)
+    sudo openvpn $DIR$NY &
+    ;;
+    2)
+    sudo openvpn $DIR$GA &
+    ;;
+    3)
+    sudo openvpn $DIR$E &
+    ;;
+    4)
+    sudo openvpn $DIR$IL &
+    ;;
+    5)
+    sudo openvpn $DIR$FL &
+    ;;
+    *)
+    sudo openvpn $DIR$FL &
+    ;;
+esac
+
+sleep 5 && ipif
