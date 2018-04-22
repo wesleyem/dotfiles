@@ -11,6 +11,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/github/dotfiles/ --work-tree=$HOME'
 alias dota='dot add'
 alias dots='dot status'
 alias dotc='dot commit -m'
+alias dotp='dot push'
 
 # git
 alias ga='git add'
