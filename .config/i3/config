@@ -175,7 +175,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton -f
 
 # startup applications
-exec --no-startup-id i3-msg 'workspace $ws10; exec spotify'
-exec --no-startup-id i3-msg 'workspace $ws3; exec atom'
-exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
-exec --no-startup-id i3-msg 'workspace $ws1; exec xfce4-terminal'
+exec --no-startup-id i3-msg 'workspace $ws10; exec spotify; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws3; exec atom; workspace $ws10'
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox; workspace $ws3'
+exec --no-startup-id i3-msg 'workspace $ws1; exec xfce4-terminal; workspace $ws2'
