@@ -6,6 +6,7 @@
 alias l='ls -Falh'
 alias fetch='neofetch'
 alias ccc='cd && clear'
+alias space='du -hs'
 
 # dotfile
 alias dot='/usr/bin/git --git-dir=$HOME/github/dotfiles/ --work-tree=$HOME'

@@ -4,7 +4,19 @@
 # systemctl enable ovpn.service
 #
 
+# close openvpn connection
+killall openvpn
+# reset hosts file and iptables to allow new connection to be established
+bash /etc/openvpn/vpnfailsafe_reset.sh
+
 NUMBER=$(( ( RANDOM % 5 )  + 1 ))
+
+if [ "$#" == 1 ]; then
+    re='[1-5]'
+    if [[ $1 =~ $re ]] ; then
+        NUMBER=$1
+    fi
+fi
 
 DIR="/etc/openvpn/client/"
 NY="US_New_York_City.conf"
@@ -13,30 +25,12 @@ IL="US_Chicago.conf"
 FL="US_Florida.conf"
 E="US_East.conf"
 
-
-# close openvpn connection
-killall openvpn
-# reset hosts file and iptables to allow new connection to be established
-bash /etc/openvpn/vpnfailsafe_reset.sh
-
 # random connection
 case $NUMBER in
-    1)
-    openvpn $DIR$NY
-    ;;
-    2)
-    openvpn $DIR$GA
-    ;;
-    3)
-    openvpn $DIR$E
-    ;;
-    4)
-    openvpn $DIR$IL
-    ;;
-    5)
-    openvpn $DIR$FL
-    ;;
-    *)
-    openvpn $DIR$FL
-    ;;
+    1)openvpn $DIR$NY &;;
+    2)openvpn $DIR$GA &;;
+    3)openvpn $DIR$E &;;
+    4)openvpn $DIR$IL &;;
+    5)openvpn $DIR$FL &;;
+    *)openvpn $DIR$FL &;;
 esac
