@@ -38,7 +38,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # lock
-bindsym $mod+Shift+x exec i3lock --color 441111
+set $lockscreen $HOME/pictures/white-mountains.png
+bindsym $mod+Shift+x exec i3lock -f -i $lockscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -168,7 +169,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # startup
-set $wallpaper $HOME/pictures/blue-moon-over-water.jpg
+set $wallpaper $HOME/pictures/white-mountains.png
 exec_always --no-startup-id wal -i $wallpaper
 exec_always --no-startup-id feh --bg-scale $wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
