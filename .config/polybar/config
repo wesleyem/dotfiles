@@ -1,7 +1,7 @@
 [colors]
-background =            #2f343f
-inactive-background =   #676E7D
-foreground =            #f3f4f5
+background =            #292828
+inactive-background =   #AC8E72
+foreground =            #e7e2de
 urgent =                #E53935
 
 [bar/snoot]

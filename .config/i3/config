@@ -129,10 +129,10 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
+set $bg-color 	         #292828
+set $inactive-bg-color   #292828
+set $text-color          #e7e2de
+set $inactive-text-color #AC8E72
 set $urgent-bg-color     #E53935
 
 # window colors
@@ -176,7 +176,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton -f
 
 # startup applications
-exec --no-startup-id i3-msg 'workspace $ws10; exec spotify; workspace $ws3'
-exec --no-startup-id i3-msg 'workspace $ws3; exec atom; workspace $ws1'
-exec --no-startup-id i3-msg 'workspace $ws1; exec xfce4-terminal; workspace $ws2'
-exec --no-startup-id i3-msg 'workspace $ws2; exec firefox;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec xfce4-terminal; exec firefox; exec atom'
