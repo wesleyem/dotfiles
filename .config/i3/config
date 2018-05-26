@@ -63,12 +63,12 @@ bindsym $mod+a focus parent
 set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 "
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6 "
+set $ws7 "7 "
+set $ws8 "8 "
+set $ws9 "9 "
 set $ws10 "10 "
 
 # switch to workspace
@@ -152,6 +152,7 @@ for_window [class="Galculator"] floating enable
 
 # default workspaces
 assign [class="Spotify"] $ws10
+assign [class="Thunderbird"] $ws9
 
 # audio
 set $sink "1"
@@ -176,4 +177,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton -f
 
 # startup applications
-exec --no-startup-id i3-msg 'workspace $ws1; exec xfce4-terminal; exec firefox; exec atom'
+exec --no-startup-id i3-msg 'workspace $ws1; exec xfce4-terminal; exec firefox; exec atom; exec thunderbird'
