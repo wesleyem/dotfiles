@@ -61,11 +61,12 @@ label-warn-underline = ${colors.urgent}
 
 [module/filesystem]
 type = internal/fs
+fixed-values=true
 mount-0 = /
 mount-1 = /home
 mount-2 = /mnt/wd_blu
 mount-3 = /mnt/wd_red_0108
-label-mounted = [%mountpoint% %free%]
+label-mounted = %free%
 
 ;[module/volume]
 ;type = internal/pulseaudio
