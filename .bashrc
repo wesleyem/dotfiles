@@ -13,10 +13,13 @@ PS1='[\u@\h \W]\$ '
 source ~/.bash_aliases
 
 # PATH
-export PATH=$PATH:~/scripts
+export PATH=$PATH:~/scripts:~/text-man
 
 # Env vars
 export GPG_TTY=$(tty)
 
+# transparency for xterm
+# [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+
 # pywal terminal theme
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)

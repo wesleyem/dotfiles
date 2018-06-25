@@ -1,8 +1,8 @@
 [colors]
-background =            #292828
-inactive-background =   #AC8E72
-foreground =            #e7e2de
-urgent =                #E53935
+background =            ${xrdb:*XTerm*background:#101010}
+inactive-background =   ${xrdb:*XTerm*color14:#4eb4fa}
+foreground =            ${xrdb:*XTerm*color15:#d0d0d0}
+urgent =                ${xrdb:*XTerm*color1:#960050}
 
 [bar/snoot]
 monitor=DP-0
@@ -18,7 +18,7 @@ foreground = ${colors.foreground}
 
 padding-left = 0
 padding-right = 2
-module-margin = 4
+module-margin = 2
 
 tray-position = right
 tray-padding = 4
@@ -29,7 +29,7 @@ tray-offset-x = -10
 tray-offset-y = 20
 
 
-font-0 = "Noto Sans:size=10;2"
+font-0 = "Noto Sans Regular:size=9;2"
 font-1 = FontAwesome:size=10;2
 
 modules-left = i3
@@ -101,15 +101,16 @@ pin-workspaces = true
 
 label-focused = "%name% %icon%"
 label-focused-padding = 1
+label-focused-foreground = ${colors.inactive-background}
 
 label-unfocused = "%name% %icon%"
 label-unfocused-padding = 1
-label-unfocused-foreground = ${colors.inactive-background}
+label-unfocused-foreground = ${colors.foreground}
 
 label-urgent = "%name% %icon%"
 label-urgent-background = ${colors.urgent}
 label-urgent-padding = 2
 
-label-visible = "%name% fix me %icon%"
-
-label-visible-padding = 2
+label-visible = "%name% %icon%"
+label-visible-foreground = ${colors.foreground}
+label-visible-padding = 1
