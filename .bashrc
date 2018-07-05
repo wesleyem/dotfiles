@@ -7,7 +7,8 @@
 
 # default
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+# PS1='\u@\h \W > '
+PS1='\W > '
 
 # Custom Aliases
 source ~/.bash_aliases
