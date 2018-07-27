@@ -7,6 +7,7 @@ alias l='ls -Falh'
 alias fetch='neofetch'
 alias ccc='cd && clear'
 alias space='du -hs'
+alias bigassfiles='find . -type f  -exec du -h {} + | sort -r -h'
 
 # dotfile
 alias dot='/usr/bin/git --git-dir=$HOME/github/dotfiles/ --work-tree=$HOME'

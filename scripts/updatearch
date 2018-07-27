@@ -24,7 +24,7 @@ frontPage()
 
 run()
 {
-  sudo pacman -Syu
+  sudo aurman -Syu
 }
 
 if [ "$#" == 0 ]; then

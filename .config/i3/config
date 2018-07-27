@@ -166,10 +166,11 @@ bindsym $mod+Return exec xterm
 bindsym $mod+Shift+q kill
 
 # startup
-set $wallpaper $HOME/pictures/binary-arch-1920x1080.png
+set $wallpaper $HOME/pictures/arch-snow.png
 # exec_always --no-startup-id wal -i $wallpaper
 exec_always --no-startup-id feh --bg-scale $wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec nm-applet
 exec --no-startup-id compton -f
 
 # lock
@@ -177,4 +178,3 @@ bindsym $mod+Shift+x exec i3lock -f -i $wallpaper
 
 # startup applications
 exec --no-startup-id i3-msg 'workspace $ws1; exec xterm; exec chromium; exec atom; exec thunderbird'
-exec /home/wm/pia.sh

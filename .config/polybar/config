@@ -24,7 +24,7 @@ tray-position = right
 tray-padding = 4
 tray-detached = false
 tray-maxsize = 16
-tray-background = ${colors.background}
+;tray-background = ${colors.foreground}
 tray-offset-x = -10
 tray-offset-y = 20
 
