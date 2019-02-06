@@ -1,17 +1,15 @@
 [colors]
-background =            ${xrdb:*XTerm*background:#101010}
-inactive-background =   ${xrdb:*XTerm*color14:#4eb4fa}
-foreground =            ${xrdb:*XTerm*color15:#d0d0d0}
-urgent =                ${xrdb:*XTerm*color1:#960050}
+background =            #101010
+inactive-background =   #583837
+foreground =            #d0d0d0
+urgent =                #960050
 
 [bar/snoot]
-monitor=DP-0
 bottom = true
 width = 100%
-height = 25
+height = 30
 offset-x  = 10
 offset-y = 20
-separator = |
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -24,7 +22,7 @@ tray-position = right
 tray-padding = 4
 tray-detached = false
 tray-maxsize = 16
-;tray-background = ${colors.foreground}
+tray-background = ${colors.inactive-background}
 tray-offset-x = -10
 tray-offset-y = 20
 
@@ -33,12 +31,12 @@ font-0 = "Noto Sans Regular:size=9;2"
 font-1 = FontAwesome:size=10;2
 
 modules-left = i3
-modules-center = wired-network
-modules-right = memory cpu temperature filesystem date
+modules-center = date
+modules-right = wired-network cpu temperature filesystem
 
 [module/wired-network]
 type = internal/network
-interface = eno1
+interface = wlp4s0
 label-connected=  %upspeed%  %downspeed%
 
 [module/memory]
@@ -64,8 +62,7 @@ type = internal/fs
 fixed-values=true
 mount-0 = /
 mount-1 = /home
-mount-2 = /mnt/wd_blu
-mount-3 = /mnt/wd_red_0108
+mount-2 = /mnt/wd_red_0108
 label-mounted = %free%
 
 ;[module/volume]

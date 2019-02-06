@@ -125,18 +125,19 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-set_from_resource $bg-color            *XTerm*background #101010
+# grey
+set_from_resource $bg-color            *XTerm*background #6d6d6d
+# black
 set_from_resource $inactive-bg-color   *XTerm*background #101010
-set_from_resource $urgent-bg-color     *XTerm*color1 #960050
-set_from_resource $text-color          *XTerm*color15 #d0d0d0
-set_from_resource $inactive-text-color *XTerm*color14 #4eb4fa
+# white
+set_from_resource $text-color          *XTerm*color15 #fefefc
+# grey
+set_from_resource $inactive-text-color *XTerm*color14 #6d6d6d
 
 # window colors
 #                       border              background          text
 client.focused          $bg-color           $bg-color           $text-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color
 
 hide_edge_borders both
 
@@ -145,6 +146,7 @@ bindsym $mod+r mode "resize"
 # floating
 for_window [class="Gimp"] floating enable
 for_window [class="Galculator"] floating enable
+for_window [class="feh"] floating enable
 
 # default workspaces
 assign [class="Spotify"] $ws10
@@ -166,7 +168,7 @@ bindsym $mod+Return exec xterm
 bindsym $mod+Shift+q kill
 
 # startup
-set $wallpaper $HOME/pictures/arch-snow.png
+set $wallpaper $HOME/pictures/white-mountains.png
 # exec_always --no-startup-id wal -i $wallpaper
 exec_always --no-startup-id feh --bg-scale $wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -177,4 +179,4 @@ exec --no-startup-id compton -f
 bindsym $mod+Shift+x exec i3lock -f -i $wallpaper
 
 # startup applications
-exec --no-startup-id i3-msg 'workspace $ws1; exec xterm; exec chromium; exec atom; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $ws1; exec xterm; exec chromium; exec thunderbird'
