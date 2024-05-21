@@ -1,29 +1,6 @@
-# dots
+# dotfiles
 
-### i3
+## Zsh
 
-scripts for use with i3blocks and configs
+Zsh config
 
-### neofetch
-
-configs
-
-### polybar
-
-config and launch script
-
-### rofi
-
-config
-
-### scripts
-
-helpful scripts for doing random things
-
-### bash
-
-aliases and general config
-
-### conky
-
-config
